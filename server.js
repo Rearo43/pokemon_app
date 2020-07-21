@@ -27,36 +27,7 @@ app.get('/favorites', getFavorites);
 app.use('*', routeNotFound);
 app.use(bigError);
 
-//----------Login (New User)
-function login(req, res){
-    let url = 'https://fontmeme.com/permalink/200718/724a6d29d63468457272b3a6112fd84b.png';
 
-    res.status(200).render('pages/login', {route: '/login', linkToRoute: 'Login', url: url});
-}
-
-//----------Global Variable to Access Users SQL Table
-let accountAccess = [];
-//----------Create New User
-function test(req, res){
-    let userName = [req.body.userName];
-    let password = [req.body.password];
-    let accountInfo = [req.body.userName, req.body.password]
-    //--NOTE-- If the var for SQL1 is another var ex. 'let params = [password];' the password in SQL renders as '{"somePassword"}'.
-
-    let SQL = `CREATE TABLE ${userName} (id SERIAL PRIMARY KEY, name VARCHAR(225), UNIQUE (name));`;
-    let SQL1 = `INSERT INTO ${userName} (name) VALUES ($1);`;
-    let SQL2 = `INSERT INTO accounts (name, password) VALUES ($1, $2);`;
-
-    accountAccess.push(userName);
-    // console.log('------------------------', accountAccess);
-
-    database.query(SQL);
-    database.query(SQL1, password);
-    database.query(SQL2, accountInfo);
-
-    
-    res.status(200).redirect('/'); 
-}
 
 //----------Show Pokemon Names
 function getPokeNames(req, res){
