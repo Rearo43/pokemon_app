@@ -104,3 +104,27 @@ footer{
     position: relative;
     top: 22px;
 }
+
+.loginForm{
+    background-color: rgb(61,125,202);
+    width: 275px;
+    height: 150px;
+    line-height: 50px;
+    margin: 10px 30px 0 30px;
+    text-align: center;
+    border-radius: 3%;
+}
+
+.login{
+    height: auto;
+    border: 1px solid black;
+    border-radius: 3%;
+}
+
+.loginButton{
+    position: relative;
+    /* margin-top: 10px; */
+    right: 5px;
+    bottom: 26px;
+}
+
