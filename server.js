@@ -27,6 +27,13 @@ app.get('/favorites', getFavorites);
 app.use('*', routeNotFound);
 app.use(bigError);
 
+//----------Login (New User)
+function login(req, res){
+    let url = 'https://fontmeme.com/permalink/200718/724a6d29d63468457272b3a6112fd84b.png';
+
+    res.status(200).render('pages/login', {route: '/login', linkToRoute: 'Login', url: url});
+}
+
 
 
 //----------Show Pokemon Names
