@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('../layouts/head') %>
+    </head>
+    <header>
+        <%- include('../layouts/header') %>
+    </header>
+    <body>
+        <main>
+            <ul>
+
+                <% names.forEach(name => { %>
+                    <form>
+                        <li> <%= name %> </li>
+                        <input type="hidden" name="name" value=" <%= name %>">
+                        <button type="submit" hidden>Add to Favorites</button>
+                    </form>
+                <% }) %>
+
+            </ul>
+        </main>
+    </body>
+    <footer>
+        <%- include('../layouts/footer') %>
+    </footer>
+</html>
