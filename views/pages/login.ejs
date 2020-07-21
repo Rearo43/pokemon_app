@@ -6,6 +6,16 @@
     <header>
         <%- include('../layouts/header') %>
     </header>
+    <body>
+        <form class="loginForm" method="post" action="/addUser">
+            <fieldset class="login">
+                <legend>Create an Account</legend>
+                <input type="text" name="userName" placeholder="User name">
+                <input type="text" name="password" placeholder="Password">
+            </fieldset>
+            <button class="loginButton type="submit">Submit</button>
+        </form>
+    </body>
     <footer>
         <%- include('../layouts/footer') %>
     </footer>
