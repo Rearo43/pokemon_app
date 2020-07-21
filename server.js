@@ -34,8 +34,7 @@ function login(req, res){
     res.status(200).render('pages/login', {route: '/login', linkToRoute: 'Login', url: url});
 }
 
-//----------Global Variable to Access Users SQL Table
-let accountAccess = [];
+
 //----------Create New User
 function test(req, res){
     let userName = [req.body.userName];
@@ -45,14 +44,14 @@ function test(req, res){
 
     let SQL = `CREATE TABLE ${userName} (id SERIAL PRIMARY KEY, name VARCHAR(225), UNIQUE (name));`;
     let SQL1 = `INSERT INTO ${userName} (name) VALUES ($1);`;
-    let SQL2 = `INSERT INTO accounts (name, password) VALUES ($1, $2);`;
+    
 
-    accountAccess.push(userName);
+    
     // console.log('------------------------', accountAccess);
 
     database.query(SQL);
     database.query(SQL1, password);
-    database.query(SQL2, accountInfo);
+    
 
     
     res.status(200).redirect('/'); 
