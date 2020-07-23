@@ -8,10 +8,10 @@
     </header>
     <body>
         <main>
-            <ul>
+            <ul id="sortable">
 
                 <% names.forEach(name => { %>
-                    <form>
+                    <form class="ui-state-default">
                         <li> <%= name %> </li>
                         <input type="hidden" name="name" value=" <%= name %>">
                         <button type="submit" hidden>Add to Favorites</button>
