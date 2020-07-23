@@ -107,6 +107,7 @@ function getFavorites(req, res){
         })
         let url = 'https://fontmeme.com/permalink/200718/62a4f2b98f2af5ac4721709ccb01b039.png';
 
+        // res.status(200).render('pages/jQTest');
         res.status(200).render('pages/favorites', {names: row, route: '/', linkToRoute: 'Home', url: url});
 
     }).catch(error => bigError(error, res));
