@@ -7,6 +7,7 @@ CREATE TABLE pokemon
   UNIQUE (name)
 );
 
+DROP TABLE IF EXISTS accounts;
 CREATE TABLE accounts
 (
   id SERIAL PRIMARY KEY,
